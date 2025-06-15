@@ -1,7 +1,7 @@
 function NavBar(){
     return(
         <div>
-            
+            <p>Hello World</p>
         </div>
     );
 }
