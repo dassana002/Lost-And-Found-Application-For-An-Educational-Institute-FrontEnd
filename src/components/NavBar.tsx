@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import './NavBar.css';
 
 function NavBar() {
     return (
@@ -6,7 +7,7 @@ function NavBar() {
             <>
                 <Navbar bg="dark" data-bs-theme="dark">
                     <Container>
-                        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                        <Navbar.Brand href="#home">Lost And Found Application </Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#features">Features</Nav.Link>
