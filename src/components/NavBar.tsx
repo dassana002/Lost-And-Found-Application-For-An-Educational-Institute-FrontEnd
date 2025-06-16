@@ -9,9 +9,8 @@ function NavBar() {
                     <Container>
                         <Navbar.Brand href="#home">Lost And Found Application </Navbar.Brand>
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <Nav.Link href="#items">ITEM</Nav.Link>
+                            <Nav.Link href="#requests">REQUEST</Nav.Link>
                         </Nav>
                     </Container>
                 </Navbar>
