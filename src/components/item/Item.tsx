@@ -1,8 +1,14 @@
 import Table from "react-bootstrap/esm/Table";
 
+/**
+ * 
+ * 01. Create a Table (add Headings)
+ * 02. Data Loading to the table
+ */
+
 export const Item = () => {
 
-    // Create a Heading Array
+    // 01.01 Create a Heading Array
     const tHeadings: string[] = [
         "Item_id",
         "Name",
@@ -18,7 +24,7 @@ export const Item = () => {
                 <h2>Item Table</h2>
                 <Table striped bordered hover>
                     <thead>
-                        {/* Heading add to Table */}
+                        {/* 01.02 Heading add to Table */}
                         <tr>
                             <th scope="col">#</th>
                             {tHeadings.map((heading, index) => (

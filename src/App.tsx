@@ -4,6 +4,12 @@ import { Request } from './components/request/Request';
 import { NavBar } from './components/NavBar';
 import { Item } from './components/item/Item';
 
+/**
+ * Create the Item Component
+ *      Install React Boostrap
+ *      Install axios 
+ */
+
 function App() {
   return (
     <div>
