@@ -7,7 +7,8 @@ import { Item } from './components/item/Item';
 /**
  * Create the Item Component
  *      Install React Boostrap
- *      Install axios 
+ *      Install axios
+ *      CORS origin policy Configuration on BackEnd 
  */
 
 function App() {

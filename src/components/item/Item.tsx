@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import Table from "react-bootstrap/esm/Table";
+import { GetAllBooks } from "../../service/Item";
 
 /**
  * 
@@ -17,6 +19,15 @@ export const Item = () => {
         "Location",
         "Status"
     ];
+
+    // Load Book Data 
+    useEffect(()=> {
+        const loadData = async()=> {
+            const getAllBooks = await GetAllBooks();
+            console.log("Get All Books : ", getAllBooks); 
+        }
+        loadData();
+    },[]);
 
     return (
         <div>
