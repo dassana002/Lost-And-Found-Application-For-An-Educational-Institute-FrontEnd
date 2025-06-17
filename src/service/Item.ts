@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getBooksURL = "http://localhost:8081/LostAndFoundApplication/api/v1/Items/getAll";
 
-// 02.01 Data Loaded from the backend
+// 02.02 Data Loaded from the backend
 export const GetAllBooks = async() => {
     try {
         // Install axios and Call to Backend

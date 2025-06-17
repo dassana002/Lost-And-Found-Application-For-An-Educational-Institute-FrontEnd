@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Table from "react-bootstrap/esm/Table";
 import { GetAllBooks } from "../../service/Item";
 
@@ -20,14 +20,30 @@ export const Item = () => {
         "Status"
     ];
 
-    // Load Book Data 
-    useEffect(()=> {
-        const loadData = async()=> {
+     // 02.04 Create Item Interface for State
+    interface Item {
+        itemId: string;
+        name: string;
+        description: string;
+        createdDate?: string;
+        location: string;
+        status: string;
+    }
+
+    // 02.03 State Update
+    const [items, setitems] = useState<Item[]>([]);
+
+    // 02.01 Load Book Data 
+    useEffect(() => {
+        const loadData = async () => {
             const getAllBooks = await GetAllBooks();
-            console.log("Get All Books : ", getAllBooks); 
+            setitems(getAllBooks);
+            console.log("Get All Books : ", getAllBooks);
         }
         loadData();
-    },[]);
+    }, []);
+
+
 
     return (
         <div>
