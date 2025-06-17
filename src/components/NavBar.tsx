@@ -2,12 +2,12 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import './NavBar.css';
 import ijselogo from '../images/images.jpeg';
 
-function NavBar() {
+export const NavBar = () => {
     return (
         <Navbar className="navbar" expand="lg">
             <Container>
                 <Navbar.Brand href="#home" className="navbar-brand">
-                    Lost & Found Hub
+                    Lost & Found Application
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -19,9 +19,9 @@ function NavBar() {
                         <img
                             src={ijselogo}
                             alt="IJSE Logo"
-                            style={{ 
-                                width: '80px', 
-                                height: '80px', 
+                            style={{
+                                width: '80px',
+                                height: '80px',
                                 objectFit: 'cover',
                                 boxShadow: 'var(--shadow-soft)'
                             }}
@@ -33,5 +33,3 @@ function NavBar() {
         </Navbar>
     );
 }
-
-export default NavBar;

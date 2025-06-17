@@ -1,0 +1,46 @@
+.creativeVibeTable {
+  /* Table container styling */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Style for table header */
+.creativeVibeTable thead tr {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Style for header cells */
+.creativeVibeTable th {
+  padding: 15px;
+  text-align: center;
+  border: none;
+}
+
+/* Style for table body rows */
+.creativeVibeTable tbody tr {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for rows */
+.creativeVibeTable tbody tr:hover {
+  background: rgba(78, 205, 196, 0.1);
+  transform: scale(1.01);
+}
+
+/* Style for table cells */
+.creativeVibeTable td {
+  padding: 12px;
+  text-align: center;
+  border-color: #e0e0e0;
+}
+
+/* Alternating row colors for striped effect */
+.creativeVibeTable tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
