@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/esm/Table";
 import { GetAllBooks } from "../../service/Item";
+import Button from "react-bootstrap/esm/Button";
 
 /**
  * 
  * 01. Create a Table (add Headings)
- * 02. Data Loading to the table
+ * 02. Data Loading into the table
+ * 03. Update Button add into the table
  */
 
 export const Item = () => {
@@ -17,7 +19,8 @@ export const Item = () => {
         "Description",
         "Created_date",
         "Location",
-        "Status"
+        "Status",
+        "option"
     ];
 
     // 02.04 Create Item Interface for State
@@ -56,12 +59,17 @@ export const Item = () => {
                             ))};
                         </tr>
                     </thead>
-                    {/* 02.04 Datas add into table rows */}
+                    {/* 02.04 Data Loading into the table */}
+
                     {items.map((row) => (
                         <tr key={row.itemId}>
                             {Object.values(row).map((cell, index) => (
                                 <td key={index}>{cell}</td>
                             ))}
+                            {/* 03.01 Update Button added */}
+                            <td>
+                                <Button variant="outline-success">Edit</Button>
+                            </td>
                         </tr>
                     ))}
                 </Table>
