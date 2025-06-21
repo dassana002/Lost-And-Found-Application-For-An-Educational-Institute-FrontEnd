@@ -3,6 +3,7 @@ import "/";
 import { Request } from './components/request/Request';
 import { NavBar } from './components/NavBar';
 import { Item } from './components/item/Item';
+import { ItemEdit } from './components/item/ItemEdit';
 
 /**
  * Create the Item Component
