@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/esm/Table";
-import { GetAllBooks } from "../../service/Item";
+import { GetAllItems } from "../../service/Item";
 import Button from "react-bootstrap/esm/Button";
 
 /**
@@ -39,12 +39,16 @@ export const Item = () => {
     // 02.01 Load Book Data 
     useEffect(() => {
         const loadData = async () => {
-            const getAllBooks = await GetAllBooks();
-            setitems(getAllBooks);   // items state change
-            console.log("Get All Books : ", getAllBooks);
+            const allItems = await GetAllItems();
+            setitems(allItems);   // items state change
+            console.log("Get All Books : ", allItems);
         }
         loadData();
     }, []);
+
+    const handleOnUpdate = async(itemId:string)=> {
+
+    }
 
     return (
         <div>
@@ -55,7 +59,10 @@ export const Item = () => {
                         {/* 01.02 Heading add into Table */}
                         <tr>
                             {tHeadings.map((heading, index) => (
-                                <th key={index} scope="col">{heading}</th>
+                                <th 
+                                    key={index} 
+                                    scope="col"
+                                >{heading}</th>
                             ))};
                         </tr>
                     </thead>
@@ -68,7 +75,12 @@ export const Item = () => {
                             ))}
                             {/* 03.01 Update Button added */}
                             <td>
-                                <Button variant="outline-success">Edit</Button>
+                                <Button 
+                                    variant="outline-success" 
+                                    onClick={()=>
+                                        handleOnUpdate(row.itemId)
+                                    }
+                                >Edit</Button>
                             </td>
                         </tr>
                     ))}
@@ -76,4 +88,4 @@ export const Item = () => {
             </div>
         </div>
     );
-}   
+} 
