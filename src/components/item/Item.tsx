@@ -20,8 +20,8 @@ export const Item = () => {
         "Status"
     ];
 
-     // 02.04 Create Item Interface for State
-    interface Item {
+    // 02.04 Create Item Interface for State
+    interface Items {
         itemId: string;
         name: string;
         description: string;
@@ -31,19 +31,17 @@ export const Item = () => {
     }
 
     // 02.03 State Update
-    const [items, setitems] = useState<Item[]>([]);
+    const [items, setitems] = useState<Items[]>([]);
 
     // 02.01 Load Book Data 
     useEffect(() => {
         const loadData = async () => {
             const getAllBooks = await GetAllBooks();
-            setitems(getAllBooks);
+            setitems(getAllBooks);   // items state change
             console.log("Get All Books : ", getAllBooks);
         }
         loadData();
     }, []);
-
-
 
     return (
         <div>
@@ -51,35 +49,23 @@ export const Item = () => {
                 <h2>Item Table</h2>
                 <Table striped bordered hover>
                     <thead>
-                        {/* 01.02 Heading add to Table */}
+                        {/* 01.02 Heading add into Table */}
                         <tr>
-                            <th scope="col">#</th>
                             {tHeadings.map((heading, index) => (
                                 <th key={index} scope="col">{heading}</th>
                             ))};
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                    {/* 02.04 Datas add into table rows */}
+                    {items.map((row) => (
+                        <tr key={row.itemId}>
+                            {Object.values(row).map((cell, index) => (
+                                <td key={index}>{cell}</td>
+                            ))}
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td colSpan={2}>Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
+                    ))}
                 </Table>
             </div>
         </div>
     );
-}
+}   
