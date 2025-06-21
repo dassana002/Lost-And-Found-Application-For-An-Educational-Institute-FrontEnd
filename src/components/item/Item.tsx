@@ -35,7 +35,7 @@ export const Item = () => {
 
     // 02.03 State Update
     const [items, setitems] = useState<Items[]>([]);
-
+    
     // 02.01 Load Book Data 
     useEffect(() => {
         const loadData = async () => {
@@ -53,7 +53,7 @@ export const Item = () => {
     return (
         <div>
             <div>
-                <h2>Item Table</h2>
+                {/* <h2>Item Table</h2> */}
                 <Table striped bordered hover>
                     <thead>
                         {/* 01.02 Heading add into Table */}
